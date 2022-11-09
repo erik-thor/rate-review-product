@@ -1,4 +1,6 @@
 
+// Product 
+
 .product {
   width: 350px;
   height: 350px;
@@ -6,4 +8,19 @@
 
 .product-image {
   width: 150px;
+}
+
+// Star rating
+
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.on {
+  color: #000;
+}
+.off {
+  color: #ccc;
 }
