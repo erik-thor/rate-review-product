@@ -36,16 +36,33 @@ const Comment = ({
       </div>
       <div className="comment-right-part">
         <div className="comment-content">
-          <div className="comment-author">{comment.username}</div>
+          <div className="comment-author">{comment.nickname}</div>
+          <div className="comment-review">
+          {[...Array(5)].map((star, selected) => {
+            selected += 1;
+            var rating = (comment.review)
+            return (
+              <button
+                type="button"
+                key={selected}
+                className={selected <= (rating) ? "on" : "off"}
+              >
+                <span className="star">&#9733;</span>
+              </button>
+            );
+          })}
+      </div>
           <div>{createdAt}</div>
         </div>
-        {!isEditing && <div className="comment-text">{comment.body}</div>}
+        {!isEditing && <div className="comment-message">{comment.body}</div>}
         {isEditing && (
           <CommentForm
             submitLabel="Update"
             hasCancelButton
-            initialText={comment.body}
-            handleSubmit={(text) => updateComment(text, comment.id)}
+            initialMessage={comment.body}
+            initialUsername={comment.nickname}
+            initialRating={comment.review}
+            handleSubmit={(message, username, rating) => updateComment(message, username, rating, comment.id)}
             handleCancel={() => {
               setActiveComment(null);
             }}
@@ -84,7 +101,7 @@ const Comment = ({
         {isReplying && (
           <CommentForm
             submitLabel="Reply"
-            handleSubmit={(text) => addComment(text, replyId)}
+            handleSubmit={(message, username, rating) => addComment(message, username, rating, replyId)}
           />
         )}
         {replies.length > 0 && (

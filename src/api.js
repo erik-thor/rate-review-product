@@ -2,36 +2,36 @@ export const getComments = async () => {
     return [
       {
         id: "1",
-        starRating: "4",
+        review: "4",
         body: "First comment",
-        username: "Jack",
+        nickname: "Jack",
         userId: "1",
         parentId: null,
         createdAt: "2021-08-16T23:00:33.010+02:00",
       },
       {
         id: "5",
-        starRating: "5",
+        review: "5",
         body: "Second comment",
-        username: "John",
+        nickname: "John",
         userId: "2",
         parentId: null,
         createdAt: "2021-08-16T23:00:33.010+02:00",
       },
       {
         id: "3",
-        starRating: "2",
+        review: "2",
         body: "First comment first child",
-        username: "John",
+        nickname: "John",
         userId: "2",
         parentId: "1",
         createdAt: "2021-08-16T23:00:33.010+02:00",
       },
       {
         id: "4",
-        starRating: "4",
+        review: "4",
         body: "Second comment second child",
-        username: "John",
+        nickname: "John",
         userId: "2",
         parentId: "2",
         createdAt: "2021-08-16T23:00:33.010+02:00",
@@ -39,19 +39,20 @@ export const getComments = async () => {
     ];
   };
   
-  export const createComment = async (text, parentId = null) => {
+  export const createComment = async (message, rating, username, parentId = null) => {
     return {
       id: Math.random().toString(36).substr(2, 9),
-      body: text,
+      body: message,
+      review: rating,
       parentId,
       userId: "1",
-      username: "John",
+      nickname: username,
       createdAt: new Date().toISOString(),
     };
   };
   
-  export const updateComment = async (text) => {
-    return { text };
+  export const updateComment = async (message, rating, username) => {
+    return { message, rating, username };
   };
   
   export const deleteComment = async () => {

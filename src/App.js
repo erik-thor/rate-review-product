@@ -1,16 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
 import Product from './general/Card.js'
-import Comments from "./general/Comments";
 
 class App extends Component {
   render() {
     return (
-      <div>
+      <div className="grid-3">
         <Product />
-        <Comments
-          commentsUrl="http://localhost:3000/comments"
-          currentUserId="1" />
       </div>
     );
   }

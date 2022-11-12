@@ -22,18 +22,18 @@ const Comments = ({ commentsUrl, currentUserId }) => {
         (a, b) =>
           new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime()
       );
-  const addComment = (text, parentId) => {
-    createCommentApi(text, parentId).then((comment) => {
+  const addComment = (message, username, rating, parentId) => {
+    createCommentApi(message, username, rating, parentId).then((comment) => {
       setBackendComments([comment, ...backendComments]);
       setActiveComment(null);
     });
   };
 
-  const updateComment = (text, commentId) => {
-    updateCommentApi(text).then(() => {
+  const updateComment = (message, username, rating, commentId) => {
+    updateCommentApi(message, username, rating).then(() => {
       const updatedBackendComments = backendComments.map((backendComment) => {
         if (backendComment.id === commentId) {
-          return { ...backendComment, body: text };
+          return { ...backendComment, body: message, review: rating, nickname: username };
         }
         return backendComment;
       });
@@ -60,9 +60,11 @@ const Comments = ({ commentsUrl, currentUserId }) => {
 
   return (
     <div className="comments">
-      <h3 className="comments-title">Comments</h3>
-      <div className="comment-form-title">Write comment</div>
-      <CommentForm submitLabel="Write" handleSubmit={addComment} />
+      <div className="comment-form">
+        <h3 className="comments-title">Comments</h3>
+        <div className="comment-form-title">Write comment</div>
+        <CommentForm submitLabel="Send" handleSubmit={addComment} />
+      </div>
       <div className="comments-container">
         {rootComments.map((rootComment) => (
           <Comment
