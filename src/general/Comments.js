@@ -22,15 +22,15 @@ const Comments = ({ commentsUrl, currentUserId }) => {
         (a, b) =>
           new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime()
       );
-  const addComment = (message, username, rating, parentId) => {
-    createCommentApi(message, username, rating, parentId).then((comment) => {
+  const addComment = (username, rating, message, parentId) => {
+    createCommentApi(username, rating, message, parentId).then((comment) => {
       setBackendComments([comment, ...backendComments]);
       setActiveComment(null);
     });
   };
 
-  const updateComment = (message, username, rating, commentId) => {
-    updateCommentApi(message, username, rating).then(() => {
+  const updateComment = (username, rating, message, commentId) => {
+    updateCommentApi(username, rating, message).then(() => {
       const updatedBackendComments = backendComments.map((backendComment) => {
         if (backendComment.id === commentId) {
           return { ...backendComment, body: message, review: rating, nickname: username };

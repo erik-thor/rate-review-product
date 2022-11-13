@@ -59,10 +59,10 @@ const Comment = ({
           <CommentForm
             submitLabel="Update"
             hasCancelButton
-            initialMessage={comment.body}
             initialUsername={comment.nickname}
             initialRating={comment.review}
-            handleSubmit={(message, username, rating) => updateComment(message, username, rating, comment.id)}
+            initialMessage={comment.body}
+            handleSubmit={(username, rating, message) => updateComment(username, rating, message, comment.id)}
             handleCancel={() => {
               setActiveComment(null);
             }}
@@ -101,7 +101,7 @@ const Comment = ({
         {isReplying && (
           <CommentForm
             submitLabel="Reply"
-            handleSubmit={(message, username, rating) => addComment(message, username, rating, replyId)}
+            handleSubmit={(username, rating, message) => addComment(username, rating, message, replyId)}
           />
         )}
         {replies.length > 0 && (

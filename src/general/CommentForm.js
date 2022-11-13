@@ -12,35 +12,40 @@ const CommentForm = ({
   initialHover = "",
 
 }) => {
-  const [message, setMessage] = useState(initialMessage);
   const [username, setUsername] = useState(initialUsername);
   const [rating, setRating] = useState(initialRating);
   const [hover, setHover] = useState(initialHover);
+  const [message, setMessage] = useState(initialMessage);
   const isTextareaDisabled = message.length === 0;
   const onSubmit = (event) => {
     event.preventDefault();
-    handleSubmit(message, username, rating);
-    setMessage("");
+    handleSubmit(username, rating, message);
     setUsername("");
     setRating("")
+    setMessage("");
   };
   return (
     <form className="comment-form__inner" onSubmit={onSubmit}>
-      <input
-        type="text"
-        className="comment-form-username"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-        placeholder="Name"
-      />
-      <div className="star-rating">Rate:
+      <div className="comment-form-user">
+        <input
+          id="username"
+          type="text"
+          className="comment-form-username"
+          value={username}
+          key="username"
+          onChange={(e) => setUsername(e.target.value)}
+          placeholder="Name"
+        />
+      </div>
+      <div className="comment-form-rating">Rate:
       {[...Array(5)].map((star, selected) => {
         selected += 1;
         return (
           <button
             type="button"
-            value={rating}
-            key={selected}
+            id="rating"
+            value={selected}
+            key="rating"
             className={selected <= (hover || rating) ? "on" : "off"}
             onClick={() => setRating(selected)}
             onMouseEnter={() => setHover(selected)}
@@ -53,8 +58,10 @@ const CommentForm = ({
       })}
       </div>
       <textarea
+        id="message"
         className="comment-form-textarea"
         value={message}
+        key="message"
         onChange={(e) => setMessage(e.target.value)}
         placeholder="Message"
       />
