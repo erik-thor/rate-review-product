@@ -1,0 +1,34 @@
+// Product 
+
+.grid-3 {
+    display: grid;
+    justify-content: center;
+  }
+  
+  .product__inner {
+    justify-content: center;
+    display: flex;
+    border: 1px solid #eee;
+    box-shadow: 1px 1px 8px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    padding: 25px;
+  }
+  
+  .product-image {
+    width: 150px;
+  }
+  
+  // Star rating
+  
+  button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+  .on {
+    color: gold;
+  }
+  .off {
+    color: #ccc;
+  }

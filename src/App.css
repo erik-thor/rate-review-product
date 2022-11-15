@@ -1,29 +1,57 @@
-.grid-3 {
-  display: grid;
-  justify-content: center; }
+body {
+  font-family: 'Open Sans';
+  font-size: 16px; }
 
-.product__inner {
-  justify-content: center;
+h1, h2, h3, h4, h5, h6 {
+  margin-block-start: 5px;
+  margin-block-end: 5px; }
+
+h6 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 20px; }
+
+h3 {
+  font-size: 24px; }
+
+h2 {
+  font-size: 28px; }
+
+h1 {
+  font-size: 56px; }
+
+.header {
+  background-color: rgba(255, 255, 255, 0.9);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0; }
+
+.header a {
+  color: blue; }
+
+.header a:hover {
+  opacity: 0.8; }
+
+.header__inner {
   display: flex;
-  border: 1px solid #eee;
-  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
-  padding: 25px; }
+  justify-content: space-between; }
 
-.product-image {
-  width: 150px; }
+.header-branding {
+  display: flex;
+  justify-content: center;
+  padding: 5px; }
 
-button {
-  background-color: transparent;
-  border: none;
-  outline: none;
-  cursor: pointer; }
+.header-links {
+  display: flex;
+  padding: 5px; }
 
-.on {
-  color: #000; }
-
-.off {
-  color: #ccc; }
+.header-links a {
+  padding: 5px 20px; }
 
 .comment-form {
   padding: 25px;
@@ -55,15 +83,76 @@ button {
   display: flex;
   gap: 16px; }
 
-.comment * + * {
-  margin-top: 5px; }
-
 .comment .replies {
   margin-top: 16px; }
 
 .comment-actions {
-  display: flex; }
+  display: flex;
+  gap: 8px; }
 
 .comment-actions .comment-action {
   border: 1px solid #000;
   padding: 5px; }
+
+.comment-meta {
+  display: flex; }
+
+.comment-meta * {
+  padding: 5px; }
+
+.comment-meta__author {
+  font-weight: 600; }
+
+.comment-meta__date {
+  font-weight: 300;
+  color: #565656;
+  font-style: italic; }
+
+.comment-message {
+  margin-top: 8px;
+  margin-bottom: 8px; }
+
+.grid-3 {
+  display: grid;
+  justify-content: center; }
+
+.product__inner {
+  justify-content: center;
+  display: flex;
+  border: 1px solid #eee;
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 25px; }
+
+.product-image {
+  width: 150px; }
+
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer; }
+
+.on {
+  color: gold; }
+
+.off {
+  color: #ccc; }
+
+.footer {
+  background-color: #eee; }
+
+.footer__inner {
+  display: flex; }
+
+.footer-branding {
+  padding: 10px;
+  display: flex;
+  justify-content: center; }
+
+.footer-branding img {
+  width: 120px;
+  height: auto; }
+
+.footer-links a {
+  padding: 5px 20px; }

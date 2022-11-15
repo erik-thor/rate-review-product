@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import thumbnail from './images/img.webp';
-import Comments from "./Comments";
+import Comments from "./Comments"
 
 class Card extends Component {
     render() {

@@ -36,7 +36,9 @@ const Comment = ({
       </div>
       <div className="comment-right-part">
         <div className="comment-content">
-          <div className="comment-author">{comment.nickname}</div>
+          <div className="comment-meta"><div className="comment-meta__author">{comment.nickname}</div>
+            <div className="comment-meta__date" >{createdAt}</div>
+          </div>
           <div className="comment-review">
           {[...Array(5)].map((star, selected) => {
             selected += 1;
@@ -52,7 +54,6 @@ const Comment = ({
             );
           })}
       </div>
-          <div>{createdAt}</div>
         </div>
         {!isEditing && <div className="comment-message">{comment.body}</div>}
         {isEditing && (

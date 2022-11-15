@@ -1,0 +1,23 @@
+.footer {
+    background-color: #eee;
+}
+
+.footer__inner {
+    display: flex;
+}
+
+.footer-branding {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    img {
+        width: 120px;
+        height: auto;
+    }
+}
+
+.footer-links {
+    a {
+        padding: 5px 20px;
+    }
+}
