@@ -84,7 +84,14 @@ h1 {
   gap: 16px; }
 
 .comment .replies {
-  margin-top: 16px; }
+  margin-top: 32px; }
+
+.comment-form__review {
+  display: inline-flex;
+  align-items: center;
+  background-color: #eee;
+  padding: 8px;
+  border-radius: 25px; }
 
 .comment-actions {
   display: flex;
@@ -153,6 +160,10 @@ button {
 .footer-branding img {
   width: 120px;
   height: auto; }
+
+.footer-links {
+  display: flex;
+  align-items: center; }
 
 .footer-links a {
   padding: 5px 20px; }

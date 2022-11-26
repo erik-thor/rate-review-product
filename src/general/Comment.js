@@ -53,7 +53,7 @@ const Comment = ({
               </button>
             );
           })}
-      </div>
+          </div>
         </div>
         {!isEditing && <div className="comment-message">{comment.body}</div>}
         {isEditing && (

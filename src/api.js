@@ -38,7 +38,7 @@ export const getComments = async () => {
       },
     ];
   };
-  
+
   export const createComment = async (username, rating, message, parentId = null) => {
     return {
       id: Math.random().toString(36).substr(2, 9),

@@ -45,7 +45,7 @@ const CommentForm = ({
             type="button"
             id="rating"
             value={selected}
-            key="rating"
+            key={selected}
             className={selected <= (hover || rating) ? "on" : "off"}
             onClick={() => setRating(selected)}
             onMouseEnter={() => setHover(selected)}

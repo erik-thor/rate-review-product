@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import thumbnail from './images/img.webp';
-import Comments from "./Comments"
+import Comments from "./Comments";
 
 class Card extends Component {
+
     render() {
       return (
         <div className="product">
@@ -11,7 +12,7 @@ class Card extends Component {
               <img src={thumbnail} className="product-image" alt="product" />
             </div>
             <div className="product-content">
-              <h2 className="product-title">Productname</h2>
+              <h3 className="product-title">Productname</h3>
               <p className="product-description">
                 Lorem ipsum dolor et.
               </p>

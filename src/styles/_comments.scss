@@ -36,8 +36,16 @@
     display: flex;
     gap: 16px;
     .replies {
-      margin-top: 16px;
+      margin-top: 32px;
     }
+  }
+
+.comment-form__review {
+    display: inline-flex;
+    align-items: center;
+    background-color: #eee;
+    padding: 8px;
+    border-radius: 25px;
   }
   
   .comment-actions {

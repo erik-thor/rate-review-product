@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import CommentForm from "./CommentForm";
 import Comment from "./Comment";
+
 import {
   getComments as getCommentsApi,
   createComment as createCommentApi,
@@ -15,6 +16,11 @@ const Comments = ({ commentsUrl, currentUserId }) => {
   const rootComments = backendComments.filter(
     (backendComment) => backendComment.parentId === null
   );
+  const allReviews = backendComments.map(function(e){
+    return +e.review;
+  });
+  const initialReview = 0;
+  const avgReview = allReviews.reduce((accumulator, currentValue) => (accumulator + currentValue), initialReview) / allReviews.length;
   const getReplies = (commentId) =>
     backendComments
       .filter((backendComment) => backendComment.parentId === commentId)
@@ -61,8 +67,11 @@ const Comments = ({ commentsUrl, currentUserId }) => {
   return (
     <div className="comments">
       <div className="comment-form">
-        <h3 className="comments-title">Comments</h3>
-        <div className="comment-form-title">Write comment</div>
+        <div className="comment-form__review">
+            <span className="star on">&#9733;</span>
+            <div>{avgReview}</div>
+        </div>
+        <h3 className="comments-title">Leave a review</h3>
         <CommentForm submitLabel="Send" handleSubmit={addComment} />
       </div>
       <div className="comments-container">
