@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Product from './general/Card.js';
+import Card from './general/Card.js';
 import Header from './Header.js';
 import Footer from './Footer.js';
 
@@ -9,7 +9,9 @@ class App extends Component {
     return (
       <div className="grid-3">
         <Header />
-        <Product />
+        <Card
+          commentsUrl="http://localhost:3000/comments"
+          currentUserId="1" />
         <Footer />
       </div>
     );
