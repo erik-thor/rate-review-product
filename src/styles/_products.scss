@@ -4,6 +4,12 @@
     display: grid;
     justify-content: center;
   }
+
+  .product {
+    margin-top: 50px;
+    max-width: 650px;
+    width: 100%;
+  }
   
   .product__inner {
     justify-content: center;
@@ -12,6 +18,16 @@
     box-shadow: 1px 1px 8px rgba(0,0,0,0.2);
     border-radius: 5px;
     padding: 25px;
+  }
+
+  .product-image__wrapper {
+    border: 1px solid #eee;
+    width: 100%;
+    justify-items: center;
+    display: grid;
+    margin-bottom: 16px;
+    margin-right: 16px;
+    border-radius: 4px;
   }
   
   .product-image {
@@ -31,4 +47,15 @@
   }
   .off {
     color: #ccc;
+  }
+
+  // Responsiveness
+
+  @media all and (max-width: 639px){
+
+    .product__inner {
+      display: grid;
+      justify-items: center;
+    }
+
   }

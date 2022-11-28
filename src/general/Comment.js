@@ -72,7 +72,7 @@ const Comment = ({
         <div className="comment-actions">
           {canReply && (
             <div
-              className="comment-action"
+              className="comment-action primary-button"
               onClick={() =>
                 setActiveComment({ id: comment.id, type: "replying" })
               }

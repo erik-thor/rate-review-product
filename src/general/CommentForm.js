@@ -65,7 +65,7 @@ const CommentForm = ({
         onChange={(e) => setMessage(e.target.value)}
         placeholder="Message"
       />
-      <button className="comment-form-button" disabled={isTextareaDisabled}>
+      <button className="comment-form-button primary-button" disabled={isTextareaDisabled}>
         {submitLabel}
       </button>
       {hasCancelButton && (

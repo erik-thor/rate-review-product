@@ -22,6 +22,7 @@ const Card = ({ commentsUrl, currentUserId }) => {
   });
   const initialReview = 0;
   const avgReview = allReviews.reduce((accumulator, currentValue) => (accumulator + currentValue), initialReview) / allReviews.length;
+  const formattedReview = avgReview.toFixed(2);
   const getReplies = (commentId) =>
     backendComments
       .filter((backendComment) => backendComment.parentId === commentId)
@@ -68,18 +69,21 @@ const Card = ({ commentsUrl, currentUserId }) => {
   return (
     <div className="product">
       <div className="product__inner">
-        <div className="product-image">
+        <div className="product-image__wrapper">
           <img src={thumbnail} className="product-image" alt="product" />
         </div>
         <div className="product-content">
           <div className="comment-form__review">
               <span className="star on">&#9733;</span>
-              <div>{avgReview}</div>
+              <div>{formattedReview}</div>
           </div>
           <h3 className="product-title">Productname</h3>
           <p className="product-description">
-            Lorem ipsum dolor et.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae enim ut lorem iaculis suscipit. Ut imperdiet a urna ut consequat. Nulla imperdiet, sem id rhoncus iaculis, diam ligula convallis ligula, nec commodo neque dolor et nulla. 
           </p>
+          <button className="cart-button primary-button">
+            Add to cart
+          </button>
         </div>
       </div>
       <div className="comments">

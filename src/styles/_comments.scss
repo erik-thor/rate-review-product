@@ -27,9 +27,7 @@
   }
   
   .comment-form-button {
-    width: 50px;
-    border: 1px solid #000;
-    padding: 5px;
+    width: 100px;
   }
   
   .comment {
@@ -43,18 +41,15 @@
 .comment-form__review {
     display: inline-flex;
     align-items: center;
-    background-color: #eee;
-    padding: 8px;
-    border-radius: 25px;
+    background-color: #000;
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 4px;
   }
   
   .comment-actions {
     display: flex;
     gap: 8px;
-    .comment-action {
-      border: 1px solid #000;
-      padding: 5px;
-    }
   }
 
 .comment-meta {
@@ -74,7 +69,11 @@
     font-style: italic;
 }
 
-  .comment-message {
-    margin-top: 8px;
-    margin-bottom: 8px;
-  }
+.comment-message {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.comment-right-part {
+  margin-bottom: 8px;
+}
